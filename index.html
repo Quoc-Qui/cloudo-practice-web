@@ -9,7 +9,6 @@
     <h1>BÁO CÁO THỰC HÀNH NHÓM</h1>
     <p>Đề tài: Triển khai Website tĩnh lên nền tảng Cloudflare Pages</p>
 
-    
     <table border="1" cellpadding="10" cellspacing="0">
         <thead>
             <tr>
@@ -22,11 +21,60 @@
                 <td>Huỳnh Quốc Huy</td>
                 <td>Viết code HTML và deploy lên Cloudflare Pages.</td>
             </tr>
-            
         </tbody>
     </table>
 
+    <hr> <h2>BÁO CÁO LAB TUẦN 2: QUẢN LÝ TRUY CẬP, IAM & AN TOÀN MẠNG TRONG ĐIỆN TOÁN ĐÁM MÂY [cite: 1, 2]</h2>
 
+    <h3>I. Yêu cầu 1: Kiến thức cơ bản [cite: 34, 35]</h3>
+    <ul>
+        <li><strong>Authentication (Xác thực):</strong> Là quá trình xác minh danh tính của một người dùng hoặc thiết bị khi cố gắng truy cập vào hệ thống[cite: 43].</li>
+        <li><strong>Authorization (Phân quyền):</strong> Là quá trình kiểm tra xem người dùng (sau khi đã xác thực thành công) có đủ quyền hạn để truy cập vào một tài nguyên cụ thể hay không[cite: 44].</li>
+        <li><strong>Vai trò của IAM trong Cloud:</strong> Identity and Access Management (IAM) giúp hệ thống đám mây quản lý danh tính số và phân quyền truy cập một cách tập trung, đảm bảo đúng người, đúng quyền lợi và đúng thời điểm[cite: 37, 45].</li>
+        <li><strong>Nguyên lý Zero Trust:</strong> Mô hình bảo mật "Không mặc định tin cậy bất kỳ người dùng hoặc thiết bị nào"[cite: 183]. Mọi truy cập đều phải được kiểm tra danh tính và điều kiện[cite: 184].</li>
+    </ul>
+
+    <h3>II. Yêu cầu 2: Thiết kế và Kiểm soát truy cập [cite: 78, 83]</h3>
+    <p><strong>1. Sơ đồ khối:</strong></p>
+
+    <p><strong>2. Ghi nhận hành vi truy cập: [cite: 168]</strong></p>
+    <ul>
+        <li><strong>Hành vi khi chưa xác thực:</strong> Khi truy cập vào URL, hệ thống không hiển thị website tĩnh mà lập tức chuyển hướng sang trang đăng nhập của Cloudflare Access[cite: 169].</li>
+        <li><strong>Hành vi khi xác thực sai:</strong> Mặc dù đăng nhập đúng mật khẩu Google/GitHub, nhưng tài khoản không nằm trong Policy (chính sách cho phép), hệ thống báo lỗi từ chối truy cập (Lỗi 403)[cite: 171].</li>
+        <li><strong>Hành vi khi xác thực đúng:</strong> Đăng nhập bằng tài khoản hợp lệ, Cloudflare cấp Token và cho phép tải toàn bộ nội dung website[cite: 172].</li>
+    </ul>
+
+    <h3>III. Yêu cầu 3: Phân tích an toàn và rủi ro [cite: 173]</h3>
+    
+    <h4>1. Rủi ro truy cập: [cite: 174]</h4>
+    <ul>
+        <li><strong>Website public hoàn toàn:</strong> Bất kỳ ai cũng có thể truy cập, rủi ro bị tấn công DDoS, rò rỉ dữ liệu và không thể giám sát được danh tính người dùng[cite: 175].</li>
+        <li><strong>Website có kiểm soát bằng IAM:</strong> Nếu mật khẩu bị lộ, kẻ gian có thể đăng nhập dễ dàng. Khó kiểm soát được thiết bị đăng nhập có an toàn hay không[cite: 176].</li>
+        <li><strong>Website có IAM nhưng không áp dụng Zero Trust:</strong> Kẻ tấn công nếu lọt được vào mạng nội bộ (qua VPN) sẽ nghiễm nhiên được coi là "an toàn" và có thể tự do tấn công các tài nguyên khác bên trong hệ thống[cite: 177].</li>
+    </ul>
+
+    <h4>2. So sánh mô hình: [cite: 178]</h4>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Tiêu chí</th>
+                <th>Bảo mật mạng truyền thống [cite: 179]</th>
+                <th>Zero Trust trong Cloud [cite: 182]</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Nguyên lý cơ bản</strong></td>
+                <td>Dựa trên khái niệm tin cậy nội bộ[cite: 180].</td>
+                <td>Không mặc định tin cậy bất kỳ người dùng hoặc thiết bị nào[cite: 183].</td>
+            </tr>
+            <tr>
+                <td><strong>Cách thức xử lý</strong></td>
+                <td>Người dùng trong mạng nội bộ được mặc định là an toàn[cite: 181].</td>
+                <td>Mọi truy cập đều phải được kiểm tra danh tính và điều kiện[cite: 184].</td>
+            </tr>
+        </tbody>
+    </table>
 
 </body>
 </html>
