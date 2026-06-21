@@ -75,6 +75,52 @@
             </tr>
         </tbody>
     </table>
+<hr>
+    <h2>Yêu cầu 5: Phân tích Mô hình Trách nhiệm Chia sẻ trên Cloud</h2>
+    <p>Mô hình trách nhiệm chia sẻ vạch ra ranh giới giữa việc khách hàng và nhà cung cấp nền tảng đám mây cần phải bảo vệ những gì.</p>
 
+    <h3>1. Nhóm trách nhiệm luôn thuộc về khách hàng</h3>
+    <ul>
+        <li><strong>Thông tin và dữ liệu:</strong> Tính toàn vẹn, bảo mật và sao lưu cơ sở dữ liệu.</li>
+        <li><strong>Thiết bị truy cập:</strong> Đảm bảo an toàn cho máy tính hoặc thiết bị di động kết nối vào hệ thống.</li>
+        <li><strong>Tài khoản và danh tính:</strong> Quản lý quyền truy cập, bảo vệ mật khẩu đăng nhập.</li>
+    </ul>
+
+    <h3>2. Nhóm trách nhiệm chuyển giao cho nhà cung cấp</h3>
+    <ul>
+        <li><strong>Máy chủ vật lý:</strong> Phần cứng máy tính, CPU, RAM, ổ cứng.</li>
+        <li><strong>Mạng lưới vật lý:</strong> Cáp mạng, bộ định tuyến vật lý, đường truyền internet.</li>
+        <li><strong>Trung tâm dữ liệu (Datacenter):</strong> Hệ thống điện, làm mát và bảo vệ an ninh tòa nhà.</li>
+    </ul>
+
+    <h3>3. Nhóm trách nhiệm thay đổi tùy theo mô hình triển khai</h3>
+    <table border="1" cellpadding="10" cellspacing="0">
+        <thead>
+            <tr>
+                <th>Mô hình</th>
+                <th>Mô tả trách nhiệm</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>On-premise (Tại chỗ)</strong></td>
+                <td>Khách hàng chịu trách nhiệm 100% từ phần cứng vật lý đến mã nguồn phần mềm.</td>
+            </tr>
+            <tr>
+                <td><strong>IaaS (Hạ tầng như một dịch vụ)</strong></td>
+                <td>Nhà cung cấp quản lý phần cứng vật lý. Khách hàng tự cài đặt hệ điều hành, cấu hình tường lửa và quản lý ứng dụng (VD: Thuê máy chủ ảo).</td>
+            </tr>
+            <tr>
+                <td><strong>PaaS (Nền tảng như một dịch vụ)</strong></td>
+                <td>Nhà cung cấp quản lý phần cứng và hệ điều hành nền tảng. Khách hàng chỉ tập trung quản lý mã nguồn ứng dụng và dữ liệu (VD: Cloudflare Pages).</td>
+            </tr>
+            <tr>
+                <td><strong>SaaS (Phần mềm như một dịch vụ)</strong></td>
+                <td>Nhà cung cấp vận hành toàn bộ phần cứng và phần mềm. Khách hàng chỉ việc đăng nhập để sử dụng (VD: Gmail, Google Drive).</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p><strong>Kết luận dự án Lab 1:</strong> Do website tĩnh của nhóm đang được triển khai trên <strong>Cloudflare Pages</strong>, đây là mô hình <strong>PaaS</strong>. Vì vậy, trách nhiệm cốt lõi của nhóm là bảo mật mã nguồn HTML đẩy lên, giữ an toàn cho tài khoản GitHub/Cloudflare, còn việc chống DDoS hạ tầng mạng hay duy trì máy chủ vật lý sẽ do Cloudflare chịu trách nhiệm.</p>
 </body>
 </html>
